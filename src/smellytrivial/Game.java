@@ -63,7 +63,7 @@ public class Game {
                 posiciones[jugadorActual] = posiciones[jugadorActual] + puntosDado;
                 if (posiciones[jugadorActual] > 11) posiciones[jugadorActual] = posiciones[jugadorActual] - 12;
 
-                nuevaPosicionJugador();
+                System.out.println(nuevaPosicionJugador());
                 System.out.println("La categoría es " + categoriaActual());
                 hacerPregunta();
             } else {
@@ -76,7 +76,7 @@ public class Game {
             posiciones[jugadorActual] = posiciones[jugadorActual] + puntosDado;
             if (posiciones[jugadorActual] > 11) posiciones[jugadorActual] = posiciones[jugadorActual] - 12;
 
-            nuevaPosicionJugador();
+            System.out.println(nuevaPosicionJugador());
             System.out.println("La categoría es " + categoriaActual());
             hacerPregunta();
         }
