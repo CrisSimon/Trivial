@@ -35,7 +35,7 @@ public class GameLauncher {
                     noGanador = juego.fueRespuestaCorrecta();
                 }
 
-            } while (noGanador);
+            } while (!noGanador);
             System.out.println("El juego ha terminado!");
         }
     }

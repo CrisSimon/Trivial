@@ -141,7 +141,7 @@ public class Game {
             } else {
                 jugadorActual++;
                 if (jugadorActual == jugadores.size()) jugadorActual = 0;
-                return true;
+                return false;
             }
 
 
@@ -166,14 +166,14 @@ public class Game {
         System.out.println("Respuesta incorrecta");
         System.out.println(jugadores.get(jugadorActual) + " va a la casilla de castigo");
         enCasillaCastigo[jugadorActual] = true;
-
+        boolean ganador = jugadorHaGanado();
         jugadorActual++;
         if (jugadorActual == jugadores.size()) jugadorActual = 0;
-        return true;
+        return ganador;
     }
 
 
     private boolean jugadorHaGanado() {
-        return !(monederos[jugadorActual] == 6);
+        return (monederos[jugadorActual] == 6);
     }
 }
