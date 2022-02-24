@@ -11,11 +11,17 @@ public class GameLauncher {
 
     public static void main(String[] args) {
         Game juego = new Game();
+        try {
+            juego.agregar("Maria");
+            juego.agregar("Juan");
+            juego.agregar("Antonio");
 
-        juego.agregar("Maria");
-        juego.agregar("Juan");
-        juego.agregar("Antonio");
-        while (juego.esJugable()) {
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("no puedes introducir mas de seis jugadores!! ");
+        }
+
+        if (juego.esJugable()) {
+
             Random rand = new Random();
 
 
@@ -29,9 +35,8 @@ public class GameLauncher {
                     noGanador = juego.fueRespuestaCorrecta();
                 }
 
-
             } while (noGanador);
+            System.out.println("El juego ha terminado!");
         }
-        System.out.println("El juego ha terminado");
     }
 }

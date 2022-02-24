@@ -38,7 +38,6 @@ public class TrivialTests {
         boolean actual = game.esJugable();
 
         Assertions.assertFalse(actual);
-
-
     }
+
 }

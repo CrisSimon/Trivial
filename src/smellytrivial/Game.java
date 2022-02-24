@@ -33,7 +33,9 @@ public class Game {
     public boolean esJugable() {
         if(cuantosJugadores()>=2){
             return true;
-        }
+        } else if (cuantosJugadores()<= 6){
+            return true;
+        }else
 
         return false;
     }
@@ -41,7 +43,6 @@ public class Game {
     public boolean agregar(String playerName) {
 
         jugadores.add(playerName);
-
         posiciones[cuantosJugadores()] = 0;
         monederos[cuantosJugadores()] = 0;
         enCasillaCastigo[cuantosJugadores()] = false;
