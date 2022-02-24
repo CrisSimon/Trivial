@@ -44,3 +44,7 @@ y devolvemos directamente el metodo creado.
 
 En el metodo fueRespuetaCorrecta teniamos varias lineas de código repetidas.
 Las extraemos fuera del bucle y de esta forma no necesitamos tenerlas repetidas.
+
+## Problema 7
+
+En el bucle de las preguntas insertamos un condicional para que cuando el número de preguntas llege al maximo vuevla a empezar el bucle.
