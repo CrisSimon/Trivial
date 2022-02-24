@@ -20,3 +20,8 @@ Creamos un test unitario "con_1_jugador_no_hay_partida".
 Añadimos en el metodo esJugable la condicion de ser 6 o menos jugadores.
 
 En el main añadimos un try-cath para solucionar el bug de añadir al sesto jugador.
+
+## Problema 3
+
+En el metodo fueRespuestaCorrecta tras la condicion de que el jugador esta en la carcel y saca una puntuacion en el dado de un numero impar,
+cambiamos la variable booleana de enCasillaCastigo[jugadorActual] a false, y de este modo cambiamos la condicion del jugador ahora es libre.
