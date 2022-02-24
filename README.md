@@ -34,7 +34,7 @@ y en el metodo respuestaIncorrecta actualizamos el retunr para que devuelva gana
 
 Por ultimo en la clase main invertimos la variable del while para que mientras Ganador no sea true el juego comtinua.
 
-##Problema 5
+## Problema 5
 
 El codigo de pasaar al siguiente jugador se repite, lo extraemos a un metodo llamado pasar_al_siguiente_jugador,
 borramos el codigo repetido de los metodos respuestaIncorrecta y fueRespuestaCorrecta
