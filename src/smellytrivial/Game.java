@@ -132,9 +132,8 @@ public class Game {
                         + " monedas doradas.");
 
                 boolean ganador = jugadorHaGanado();
-                //Ejer 3.
-                // System.out.print("Ya has salido de la carcel!!");
-               // enCasillaCastigo[jugadorActual] = false;
+
+                enCasillaCastigo[jugadorActual] = false;
                 jugadorActual++;
                 if (jugadorActual == jugadores.size()) jugadorActual = 0;
 
