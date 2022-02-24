@@ -31,13 +31,13 @@ public class Game {
     }
 
     public boolean esJugable() {
-        if(cuantosJugadores()>=2){
+        if (cuantosJugadores() >= 2) {
             return true;
-        } else if (cuantosJugadores()<= 6){
+        } else if (cuantosJugadores() <= 6) {
             return true;
-        }else
+        } else
 
-        return false;
+            return false;
     }
 
     public boolean agregar(String playerName) {
@@ -130,18 +130,13 @@ public class Game {
                         + " ahora tiene "
                         + monederos[jugadorActual]
                         + " monedas doradas.");
-
-                boolean ganador = jugadorHaGanado();
-
                 enCasillaCastigo[jugadorActual] = false;
-                jugadorActual++;
-                if (jugadorActual == jugadores.size()) jugadorActual = 0;
 
-                return ganador;
+
+                return pasar_al_siguiente_jugador();
             } else {
-                jugadorActual++;
-                if (jugadorActual == jugadores.size()) jugadorActual = 0;
-                return false;
+
+                return pasar_al_siguiente_jugador();
             }
 
 
@@ -154,11 +149,7 @@ public class Game {
                     + monederos[jugadorActual]
                     + " monedas doradas.");
 
-            boolean ganador = jugadorHaGanado();
-            jugadorActual++;
-            if (jugadorActual == jugadores.size()) jugadorActual = 0;
-
-            return ganador;
+           return pasar_al_siguiente_jugador();
         }
     }
 
@@ -166,14 +157,20 @@ public class Game {
         System.out.println("Respuesta incorrecta");
         System.out.println(jugadores.get(jugadorActual) + " va a la casilla de castigo");
         enCasillaCastigo[jugadorActual] = true;
-        boolean ganador = jugadorHaGanado();
-        jugadorActual++;
-        if (jugadorActual == jugadores.size()) jugadorActual = 0;
-        return ganador;
+
+        return pasar_al_siguiente_jugador();
     }
 
 
     private boolean jugadorHaGanado() {
         return (monederos[jugadorActual] == 6);
+    }
+
+    public boolean pasar_al_siguiente_jugador() {
+        boolean ganador = jugadorHaGanado();
+        jugadorActual++;
+        if (jugadorActual == jugadores.size()) jugadorActual = 0;
+        return ganador;
+
     }
 }
