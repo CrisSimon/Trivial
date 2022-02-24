@@ -17,7 +17,7 @@ public class Game {
     int jugadorActual = 0;
     boolean estaSaliendoDeLaCarcel;
 
-    public  Game(){
+    public Game() {
         for (int i = 0; i < 50; i++) {
             preguntasCultura.addLast("Pregunta de Cultura " + i);
             preguntasCiencias.addLast(("Pregunta de Ciencias " + i));
@@ -26,24 +26,29 @@ public class Game {
         }
     }
 
-    public String crearPreguntaMusica(int index){
+    public String crearPreguntaMusica(int index) {
         return "Pregunta de Música " + index;
     }
 
     public boolean esJugable() {
-        return (cuantosJugadores() >= 2);
+        if(cuantosJugadores()>=2){
+            return true;
+        }
+
+        return false;
     }
 
     public boolean agregar(String playerName) {
 
-
         jugadores.add(playerName);
+
         posiciones[cuantosJugadores()] = 0;
         monederos[cuantosJugadores()] = 0;
         enCasillaCastigo[cuantosJugadores()] = false;
 
         System.out.println(playerName + " se ha unido a la partida");
         System.out.println("Es el jugador número " + jugadores.size());
+
         return true;
     }
 
@@ -116,7 +121,7 @@ public class Game {
     }
 
     public boolean fueRespuestaCorrecta() {
-        if (enCasillaCastigo[jugadorActual]){
+        if (enCasillaCastigo[jugadorActual]) {
             if (estaSaliendoDeLaCarcel) {
                 System.out.println("Respuesta correcta!!!!");
                 monederos[jugadorActual]++;
@@ -126,6 +131,9 @@ public class Game {
                         + " monedas doradas.");
 
                 boolean ganador = jugadorHaGanado();
+                //Ejer 3.
+                // System.out.print("Ya has salido de la carcel!!");
+               // enCasillaCastigo[jugadorActual] = false;
                 jugadorActual++;
                 if (jugadorActual == jugadores.size()) jugadorActual = 0;
 
@@ -135,7 +143,6 @@ public class Game {
                 if (jugadorActual == jugadores.size()) jugadorActual = 0;
                 return true;
             }
-
 
 
         } else {
@@ -155,9 +162,9 @@ public class Game {
         }
     }
 
-    public boolean respuestaIncorrecta(){
+    public boolean respuestaIncorrecta() {
         System.out.println("Respuesta incorrecta");
-        System.out.println(jugadores.get(jugadorActual)+ " va a la casilla de castigo");
+        System.out.println(jugadores.get(jugadorActual) + " va a la casilla de castigo");
         enCasillaCastigo[jugadorActual] = true;
 
         jugadorActual++;

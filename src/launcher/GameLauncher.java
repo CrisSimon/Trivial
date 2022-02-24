@@ -15,22 +15,23 @@ public class GameLauncher {
         juego.agregar("Maria");
         juego.agregar("Juan");
         juego.agregar("Antonio");
-
-        Random rand = new Random();
-
-        do {
-
-            juego.tirarDado(rand.nextInt(5) + 1);
-
-            if (rand.nextInt(9) == 7) {
-                noGanador = juego.respuestaIncorrecta();
-            } else {
-                noGanador = juego.fueRespuestaCorrecta();
-            }
+        while (juego.esJugable()) {
+            Random rand = new Random();
 
 
+            do {
 
-        } while (noGanador);
+                juego.tirarDado(rand.nextInt(5) + 1);
 
+                if (rand.nextInt(9) == 7) {
+                    noGanador = juego.respuestaIncorrecta();
+                } else {
+                    noGanador = juego.fueRespuestaCorrecta();
+                }
+
+
+            } while (noGanador);
+        }
+        System.out.println("El juego ha terminado");
     }
 }
