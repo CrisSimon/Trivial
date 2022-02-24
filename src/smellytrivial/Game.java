@@ -23,7 +23,10 @@ public class Game {
             preguntasCiencias.addLast(("Pregunta de Ciencias " + i));
             preguntasDeportes.addLast(("Pregunta de Deportes " + i));
             preguntasMusica.addLast(crearPreguntaMusica(i));
+
+            if(i == 49)  i = 0;
         }
+
     }
 
     public String crearPreguntaMusica(int index) {
